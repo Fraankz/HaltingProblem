@@ -1,4 +1,4 @@
-package haltingproblem.checker;
+package haltingproblem;
 
 import haltingproblem.programs.Program;
 
