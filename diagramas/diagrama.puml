@@ -1,0 +1,58 @@
+@startuml
+' Definición de paquetes y clases
+
+package "haltingproblem" {
+  class Main {
+    +main(String[] args)
+  }
+}
+
+package "haltingproblem.checker" {
+  class HaltChecker {
+    +willHalt(program: Program, input: Program) : boolean
+  }
+}
+
+package "haltingproblem.programs" {
+  interface Program {
+    +run()
+    +getName() : String
+  }
+  class CountDown {
+    -start: int
+    +CountDown(start: int)
+    +run()
+    +getName() : String
+  }
+  class CountUp {
+    -start: int
+    +CountUp(start: int)
+    +run()
+    +getName() : String
+  }
+}
+
+package "haltingproblem.logic" {
+  class Reverser {
+    +run()
+    +getName() : String
+  }
+}
+
+package "haltingproblem.ui" {
+  class MainUI {
+    +MainUI()
+  }
+}
+
+' Relaciones de herencia
+Program <|.. CountDown
+Program <|.. CountUp
+Program <|.. Reverser
+
+' Relaciones de dependencia
+Main ..> MainUI : lanza
+Reverser ..> HaltChecker : utiliza
+HaltChecker ..> Program : recibe
+
+@enduml
