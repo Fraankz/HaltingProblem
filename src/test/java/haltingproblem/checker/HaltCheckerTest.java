@@ -1,6 +1,5 @@
 package haltingproblem.checker;
 
-import haltingproblem.HaltChecker;
 import haltingproblem.programs.CountDown;
 import haltingproblem.programs.CountUp;
 import haltingproblem.programs.Program;

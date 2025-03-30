@@ -1,6 +1,6 @@
 package haltingproblem.logic;
 
-import haltingproblem.HaltChecker;
+import haltingproblem.checker.HaltChecker;
 import haltingproblem.programs.Program;
 
 public class Reverser implements Program {
